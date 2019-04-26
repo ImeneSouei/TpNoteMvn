@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+		<!-- on va utiliser les annotations -->
+
+<context:annotation-config/>
+
+<!-- donner le chemin ou se trouvent les classes annotées -->
+
+<context:component-scan base-package="com.infotel.TpMavenNote"/>
+
+<bean id="Dev1" class="com.infotel.TpMavenNote.metier.Dev">
+<property name="idDev" value="1"/>
+<property name="nom" value="Imene"/>
+<property name="experience" value="3"/>
+
+
+</bean>
+<bean id="Dev2" class="com.infotel.TpMavenNote.metier.Dev">
+<property name="idDev" value="2"/>
+<property name="nom" value="Elsa"/>
+<property name="experience" value="5"/>
+</bean>
+
+<bean id="DevLo1" class="com.infotel.TpMavenNote.metier.DevLogiciel">
+ <property name="developpeur" ref="Dev1"/>
+  <property name="chefdeveloppeur" ref="Dev2"/>
+ 
+
+</bean>
+
+
+</beans>
