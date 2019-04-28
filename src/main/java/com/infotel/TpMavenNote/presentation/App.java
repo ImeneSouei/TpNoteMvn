@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.infotel.TpMavenNote.metier.Dev;
 import com.infotel.TpMavenNote.metier.DevLogiciel;
 import com.infotel.TpMavenNote.metier.Etudiant;
+import com.infotel.TpMavenNote.metier.Formation;
 import com.infotel.TpMavenNote.service.Iservice;
 import com.infotel.TpMavenNote.service.ServiceImpl;
 
@@ -36,8 +37,29 @@ public class App
      	
     	 Etudiant e = context.getBean("etudiant", Etudiant.class);
     	 
-    	 Iservice service= context.getBean("serviceImpl", ServiceImpl.class);
+    	 e.setIdEtudiant(1);
+    	 e.setNom("farji");
+    	 e.setPrenom("khlifa");
+    	
+    	 
+    	 
+    	
+    	 Iservice service = context.getBean("serviceImpl", ServiceImpl.class);
+    	 
          service.ajouterEtudiant(e);
+         
+         
+         Formation f = context.getBean("formation", Formation.class);
+         
+         f.setIdFormation(1);
+         f.setNomFormation("JAVA JEE");
+    	 
+     	
+    	
+    	 
+         service.ajouterFormation(f);
+         
+     
          
          
          

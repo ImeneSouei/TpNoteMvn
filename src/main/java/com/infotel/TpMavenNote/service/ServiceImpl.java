@@ -7,8 +7,8 @@ import com.infotel.TpMavenNote.dao.Idao;
 import com.infotel.TpMavenNote.metier.Etudiant;
 import com.infotel.TpMavenNote.metier.Formation;
 
-@Service
-public class ServiceImpl implements Idao {
+@Service 
+public class ServiceImpl implements Iservice {
 	
      @Autowired
 	private Idao dao;
